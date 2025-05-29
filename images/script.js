@@ -20,3 +20,20 @@ window.addEventListener('scroll', () => {
     header.classList.remove('shrink');
   }
 });
+
+document.querySelectorAll('nav a').forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault(); // Stop immediate navigation
+    
+    const href = this.getAttribute('href');
+    
+    // Add slide-out animation class
+    document.body.classList.add('slide-out');
+    
+    // After animation duration, navigate to href
+    setTimeout(() => {
+      window.location.href = href;
+    }, 500); // Duration matches CSS animation length
+  });
+});
+
