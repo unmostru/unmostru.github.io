@@ -202,4 +202,30 @@ footer {
   animation: fadeInUp 1.2s ease-out both;
 }
 
+/* Initial state */
+body {
+  position: relative;
+  overflow-x: hidden;
+  transition: transform 0.5s ease;
+}
+
+/* Slide out to left */
+body.slide-out {
+  transform: translateX(-100vw);
+}
+
+/* Optional: Slide in on page load */
+body {
+  animation: slide-in 0.5s forwards;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 
